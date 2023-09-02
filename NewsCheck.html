@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="style1.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Lato:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Nanum+Pen+Script&family=Lato:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      background-color: black;
+    }
+    #heading1 {
+      /* No Misleding News Now */
+
+      position: absolute;
+      width: 1330px;
+      height: 140px;
+      left: 282px;
+      top: 24px;
+
+      font-family: "Lato", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 111px;
+      line-height: 133px;
+
+      color: rgba(255, 255, 255, 0.23);
+    }
+    #heading2 {
+      position: absolute;
+      width: 1075px;
+      height: 104px;
+      top: 180px;
+      left: 282px;
+
+      font-family: "Lato", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 43px;
+      line-height: 52px;
+
+      color: rgba(255, 255, 255, 0.23);
+    }
+    #textarea1 {
+      position: absolute;
+      width: 697px;
+      height: 370px;
+      left: calc(50% - 697px / 2 - 203.5px);
+      top: calc(50% - 400px / 2 + 61px);
+      font-size: 30px;
+      font-family: "Lato", sans-serif;
+      color: #000000;
+      padding: 10px;
+      background: #ffffff;
+      border-radius: 33px;
+    }
+    #result {
+      position: absolute;
+      width: 339px;
+      height: 82px;
+      left: 1030px;
+      top: 250px;
+
+      font-family: "Lato", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 86px;
+      line-height: 103px;
+
+      color: #ffffff;
+    }
+    #real {
+      position: absolute;
+      width: 428px;
+      height: 137px;
+      left: 1030px;
+      top: 300px;
+
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 128px;
+      line-height: 154px;
+
+      color: #91c511;
+    }
+    #realresult {
+      position: absolute;
+      width: 428px;
+      height: 137px;
+      left: 1030px;
+      top: 280px;
+
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 188px;
+      line-height: 154px;
+      opacity: 0;
+      color: white;
+    }
+    #fakeresult {
+      position: absolute;
+      width: 428px;
+      height: 137px;
+      left: 1030px;
+      top: 280px;
+
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 188px;
+      line-height: 154px;
+      opacity: 0;
+      color: white;
+    }
+    #feedback {
+      position: absolute;
+      width: 628px;
+      height: 137px;
+      left: 1040px;
+      top: 456px;
+
+      font-family: "Nanum Pen Script", cursive;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 55px;
+      line-height: 154px;
+      opacity: 0;
+      color: rgb(0, 0, 0);
+    }
+
+    #or {
+      position: absolute;
+      width: 137px;
+      height: 137px;
+      left: 1350px;
+      top: 300px;
+
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 128px;
+      line-height: 154px;
+
+      color: #ffffff;
+    }
+    #fake {
+      position: absolute;
+      width: 137px;
+      height: 137px;
+      left: 1030px;
+      top: 420px;
+
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 128px;
+      line-height: 154px;
+
+      color: #FF1616;
+    }
+
+    #submit {
+      position: absolute;
+      width: 254px;
+      height: 68px;
+      left: 400px;
+      top: 698px;
+      align-items: center;
+
+      background-color: #0a66c2;
+      border: 0;
+      border-radius: 100px;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Lato,
+        "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+        "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Lucida Grande", Helvetica, Arial, sans-serif;
+      font-size: 38px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 20px;
+      max-width: 480px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+
+    #submit:hover,
+    #submit:focus {
+      background-color: #16437e;
+      color: #ffffff;
+    }
+    #reset {
+      position: absolute;
+      width: 254px;
+      height: 68px;
+      left: 690px;
+      top: 698px;
+      align-items: center;
+      font-size: 38px;
+      background-color: #0a66c2;
+      border: 0;
+      border-radius: 100px;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Lato,
+        "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+        "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Lucida Grande", Helvetica, Arial, sans-serif;
+
+      font-weight: 600;
+      justify-content: center;
+      line-height: 20px;
+      max-width: 480px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+
+    #submit:hover,
+    #submit:focus,
+    #reset:hover,
+    #reset:focus {
+      background-color: #16437e;
+      color: #ffffff;
+    }
+    #thumbsup {
+      position: absolute;
+      opacity: 0;
+      left: 1150px;
+      top: 598px;
+    }
+    #thumbsdown {
+      position: absolute;
+      opacity: 0;
+      left: 1250px;
+      top: 598px;
+      
+      transform: rotate(180deg);
+    }
+    #thumbsup:hover {
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shaking 0.5s;
+
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes shaking {
+      0% {
+        transform: translate(1px, 1px) rotate(0deg);
+      }
+      10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+      }
+      20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+      }
+      30% {
+        transform: translate(3px, 2px) rotate(0deg);
+      }
+      40% {
+        transform: translate(1px, -1px) rotate(1deg);
+      }
+      50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+      }
+      60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+      }
+      70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+      }
+      80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+      }
+      90% {
+        transform: translate(1px, 2px) rotate(0deg);
+      }
+      100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+      }
+    }
+
+    #thumbsdown:hover {
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shake 0.5s;
+
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translate(1px, 1px) rotate(180deg);
+      }
+      10% {
+        transform: translate(-1px, -2px) rotate(179deg);
+      }
+      20% {
+        transform: translate(-3px, 0px) rotate(181deg);
+      }
+      30% {
+        transform: translate(3px, 2px) rotate(180deg);
+      }
+      40% {
+        transform: translate(1px, -1px) rotate(181deg);
+      }
+      50% {
+        transform: translate(-1px, 2px) rotate(179deg);
+      }
+      60% {
+        transform: translate(-3px, 1px) rotate(180deg);
+      }
+      70% {
+        transform: translate(3px, 1px) rotate(179deg);
+      }
+      80% {
+        transform: translate(-1px, -1px) rotate(181deg);
+      }
+      90% {
+        transform: translate(1px, 2px) rotate(180deg);
+      }
+      100% {
+        transform: translate(1px, -2px) rotate(179deg);
+      }
+    }
+    nav {
+      background-color: #ffffff;
+     
+     display: flex;
+     height:1.8em;
+     font-size: 1.6em;
+     font-weight:1.6;
+     font-family: 'Lato', sans-serif;
+     margin: -7px -1px 0px -7px;
+     width: 100.7%;
+    }
+    
+    a {
+      color:black;
+      text-decoration: none;
+      background-color: rgb(248, 248, 248);
+      margin: 0px 0px 0px 0px;
+      padding: 3px 20px 3px 20px;
+    }
+
+    
+    a:hover{
+        background-color:rgb(0, 0, 0);
+        color:white;
+
+    }
+    #Newscheck{
+        background-color: rgb(0, 0, 0);
+        color:white;
+        margin:2px;
+    }
+    #Newscheck:hover{
+
+        background-color:rgb(63, 63, 63);
+        color:white;
+    }
+  </style>
+  <body>
+    <nav>
+      
+      <a href="/Home.html">Home</a>
+    
+      <a href="/Newscheck.html" id="Newscheck">Check News</a>
+    
+      <a href="/Signupform.html" id="signup">Sign Up</a>
+ 
+  </nav>
+
+    <h1 id="heading1">No Misleding News Now</h1>
+    <h1 id="heading2">Is news really breaking?</h1>
+    <form >
+      <textarea name="message" id="textarea1" rows="6" cols="50"></textarea>
+      
+      <button type="submit" id="submit" onclick="fake()">Predict</button>
+    </form>
+    <button id="reset" onclick="reset()">Reset</button>
+    
+    {% if prediction == ['FAKE']%} real() {% elif prediction == ['REAL']%}
+    fake() {% endif %}
+
+    <h1 id="result">Result</h1>
+    <h1 id="real">REAL</h1>
+    <h1 id="or">or</h1>
+    <h1 id="fake">FAKE</h1>
+
+    <h1 id="realresult">REAL</h1>
+    <h1 id="fakeresult">FAKE</h1>
+
+    <h2 id="feedback">Not Happy with Result</h2>
+    <input
+      type="image"
+      src="icons8-thumbs-up-100.png"
+      id="thumbsup"
+      name="saveForm"
+      class="btTxt submit"
+    />
+    <input
+      type="image"
+      src="icons8-thumbs-up-100.png"
+      id="thumbsdown"
+      name="saveForm"
+      class="btTxt submit"
+    />
+  </body>
+  <script type="text/javascript">
+    function reset() {
+      location = location.href;
+    }
+
+    function fake() {
+      var element = document.getElementById("heading1");
+      element.parentNode.removeChild(element);
+      document.body.style.backgroundColor = "#FF1616";
+      document.getElementById("result").style.color = "black";
+      document.getElementById("fakeresult").style.opacity = 1.0;
+      document.getElementById("real").style.opacity = 0;
+      document.getElementById("fake").style.opacity = 0;
+      document.getElementById("or").style.opacity = 0;
+      document.getElementById("heading2").style.opacity = 0;
+      document.getElementById("feedback").style.opacity = 1;
+      document.getElementById("thumbsup").style.opacity = 1;
+      document.getElementById("thumbsdown").style.opacity = 1;
+    }
+
+    function real() {
+      var element = document.getElementById("heading1");
+      element.parentNode.removeChild(element);
+      document.body.style.backgroundColor = "#91C511";
+      document.getElementById("result").style.color = "black";
+      document.getElementById("realresult").style.opacity = 1.0;
+      document.getElementById("real").style.opacity = 0;
+      document.getElementById("fake").style.opacity = 0;
+      document.getElementById("or").style.opacity = 0;
+      document.getElementById("heading2").style.opacity = 0;
+      document.getElementById("feedback").style.opacity = 1;
+      document.getElementById("thumbsup").style.opacity = 1;
+      document.getElementById("thumbsdown").style.opacity = 1;
+    }
+  </script>
+</html>

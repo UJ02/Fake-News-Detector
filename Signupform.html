@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Nanum+Pen+Script&family=Lato:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style type="text/css">
+
+    #Name,
+    #DOB,
+    #Mobile,
+    #Email {
+      position: absolute;
+      left: 390px;
+      font-size: 3em;
+      font-family: Lato;
+      padding: 5px;
+      border-radius: 9px;
+    }
+    body {
+      color: white;
+      background-color: black;
+    }
+    label {
+      position: absolute;
+      left: 150px;
+      font-size: 3em;
+      font-family: Lato;
+    }
+    #form {
+      top: 190px;
+      left: 150px;
+      font-size: 3em;
+      font-family: Lato;
+    }
+    #Name,
+    #name {
+      top: 280px;
+    }
+    #Name {
+      left: 290px;
+      width: 36.4%;
+    }
+    #DOB,
+    #dob {
+      top: 370px;
+    }
+    #DOB {
+      left: 440px;
+      width: 27.8%;
+    }
+    #Email {
+      left: 290px;
+    }
+    #Mobile,
+    #mobile {
+      top: 460px;
+    }
+    #Email,
+    #email {
+      top: 550px;
+      width: 36.5%;
+    }
+
+    #img {
+      position: absolute;
+      top: 200px;
+      height: 400px;
+      width: 400px;
+      left: 1100px;
+    }
+    #Submit {
+      position: absolute;
+      width: 254px;
+      height: 68px;
+      left: 400px;
+      top: 648px;
+      align-items: center;
+
+      background-color: #0a66c2;
+      border: 0;
+      border-radius: 100px;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Lato,
+        "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+        "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Lucida Grande", Helvetica, Arial, sans-serif;
+      font-size: 38px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 20px;
+      max-width: 480px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+
+    #submit:hover,
+    #submit:focus {
+      background-color: #16437e;
+      color: #ffffff;
+    }
+    nav {
+      background-color: #ffffff;
+     
+      display: flex;
+     height:1.8em;
+     font-size: 1.6em;
+     font: weight 1.6;
+     font-family: 'Lato', sans-serif;
+     margin: -7px -1px 0px -7px;
+     width: 100.7%;
+    }
+    
+    a {
+      color:black;
+      text-decoration: none;
+      background-color: rgb(248, 248, 248);
+      margin: 0px 0px 0px 0px;
+      padding: 3px 20px 3px 20px;
+    }
+
+    
+    a:hover{
+        background-color:rgb(0, 0, 0);
+        color:white;
+
+    }
+    #signup{
+        background-color: rgb(0, 0, 0);
+        color:white;
+        margin:2px;
+    }
+    #signup:hover{
+
+        background-color:rgb(63, 63, 63);
+        color:white;
+    }
+  </style>
+  <body>
+    <nav>
+      
+        <a href="/Home.html">Home</a>
+      
+        <a href="/Newscheck.html">Check News</a>
+      
+        <a href="/Signupform.html" id="signup">Sign Up</a>
+   
+    </nav>
+
+    <form>
+      <label id="form">Fill this Sign Up Form</label>
+      <label for="email" id="email">Email</label>
+      <label for="date" id="dob">Date of Birth</label>
+      <label for="tel" id="mobile">Mobile No.</label>
+      <label for="name" id="name">Name</label>
+      <input type="text" id="Name" placeholder="Name" />
+      <input type="date" id="DOB" placeholder="Date of Birth" />
+      <input type="tel" id="Mobile" placeholder="Mobile No." />
+      <input type="email" id="Email" placeholder="E-mail" />
+      <input type="submit" id="Submit"  onclick="window.location.href = '/Thanks.html'"/>
+    </form>
+
+    <video id="img" autoplay loop>
+      <source src="/Fake News Detector (1).mp4" type="video/mp4" />
+
+      Your browser does not support the video tag.
+    </video>
+  </body>
+
+</html>
